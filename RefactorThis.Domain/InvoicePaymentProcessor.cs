@@ -1,10 +1,11 @@
 using System;
 using System.Linq;
-using RefactorThis.Persistence;
+using RefactorThis.Persistence.Models;
+using RefactorThis.Persistence.Repositories;
 
 namespace RefactorThis.Domain
 {
-	public class InvoicePaymentProcessor
+    public class InvoicePaymentProcessor
 	{
 		private readonly InvoiceRepository _invoiceRepository;
 
