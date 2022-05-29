@@ -1,14 +1,18 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using RefactorThis.Persistence.Interfaces;
 using RefactorThis.Persistence.Models;
 
 namespace RefactorThis.Persistence.Repositories
 {
-    public class InvoiceRepository
+    public class InvoiceRepository : IRepository<Invoice>
     {
-        private Invoice _invoice;
+        private List<Invoice> _invoices;
 
         public Invoice GetInvoice(string reference)
         {
-            return _invoice;
+            return _invoices?.First(x => x.Reference.Equals(reference, StringComparison.InvariantCultureIgnoreCase));
         }
 
         public void Save(Invoice invoice)
@@ -18,7 +22,10 @@ namespace RefactorThis.Persistence.Repositories
 
         public void Add(Invoice invoice)
         {
-            _invoice = invoice;
+            if (_invoices == null)
+                _invoices = new List<Invoice>();
+            
+            _invoices.Add(invoice);
         }
     }
 }
