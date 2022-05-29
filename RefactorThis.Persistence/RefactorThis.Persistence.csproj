@@ -5,4 +5,10 @@
 		<LangVersion>7.3</LangVersion>
 	</PropertyGroup>
 
+	<ItemGroup>
+	  <Compile Remove="Interface\**" />
+	  <EmbeddedResource Remove="Interface\**" />
+	  <None Remove="Interface\**" />
+	</ItemGroup>
+
 </Project>
