@@ -6,9 +6,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <Compile Remove="Interface\**" />
-	  <EmbeddedResource Remove="Interface\**" />
-	  <None Remove="Interface\**" />
+	  <Folder Include="Interface\" />
 	</ItemGroup>
 
 </Project>
